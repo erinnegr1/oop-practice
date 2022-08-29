@@ -116,11 +116,10 @@ function alien(HP, coordinates, direction){
     HP, // any time the key is the same as variable, you can use "HP," for syntactic sugar
     coordinates, //{x,y}
     direction,
-    move: function(change_x, change_y) {  // a method is a function that is defined inside of class
-      this.coordinates.x = this.coordinates.x + change_x; // using this is more explicit and makes sure we are refering to coordinates defined in the param
-      this.coordinates.y = this.coordinates.y + change_y;
-      // coordinates.x += direction.x;
-      // coordinates.y += direction.y;
+    move: function() {  // a method is a function that is defined inside of class
+      this.coordinates.x += this.direction.x; // using this. is more explicit and makes sure we are refering to coordinates defined in the param
+      this.coordinates.y += this.direction.y;
+
     },
     onHit: function(bullet){
       this.HP = this.HP - bullet.damage;
