@@ -161,20 +161,56 @@ class AlienClass {
   }
 }
 
+////Barrier
 
+////Factory Function
 
-///// Barrier
-
-/**
- * 
- * 
- * 
- *  
- * 
+function Barrier(maxHP, currentHP, size, coordinates){
+/*Four parameters. maxHP numeric, currentHP numeric, size numeric, x y coordinates object
  */
+  return {
+    maxHP,
+    currentHP,
+    size,
+    coordinates,
+    repair: function(){
+      if(currentHP<maxHP){
+        currentHP++
+      } else if(currentHP === maxHP){
+        size++
+      }
+    },
+    break: function(){
+      if(currentHP===0){
+        size--
+      } else{
+        currentHP--
+      }
+    }
+  }
+}
 
+function Barrier(maxHP, currentHP, size, coordinates){
+  this.maxHP = maxHP;
+  this.currentHP = currentHP;
+  this.size = size;
+  this.coordinates = coordinates;
+  this.repair = function(){
+    if(currentHP<maxHP){
+      currentHP++
+    } else if(currentHP === maxHP){
+      size++
+    }
+  }
+  this.break() = function(){
+    if(currentHP===0){
+      size--
+    } else{
+      currentHP--
+    }
+  }
+} //still throwing an error idk why. whateves. Goodnight!
 
-//Factory Function
 // Constructor Function
 // Class Syntax
 
